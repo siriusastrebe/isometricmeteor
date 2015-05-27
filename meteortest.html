@@ -1,0 +1,25 @@
+<head>
+  <title>meteortest</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> world}}
+ 
+  {{#each tiles}}
+    {{> tile}}
+  {{/each}}
+
+</body>
+
+<template name="world">
+  <div id="world">
+    <ul>
+    </ul>
+  </div>
+</template>
+
+<template name="tile">
+  <div class="cobblestone" style="left: {{x}}px; top: {{y}}px;"></div>
+</template>

@@ -1,0 +1,13 @@
+/* CSS declarations go here */
+
+#world {
+    width: 2048px;
+    height: 1024px;
+}
+
+.cobblestone {
+    background-image: url('cobblestone.png');
+    position: absolute;
+    height: 96px;
+    width: 128px;
+}
