@@ -1,28 +1,5 @@
 Tiles = new Mongo.Collection("tiles"); 
 if (Meteor.isClient) {
-  // counter starts at 0
-/*
-  Session.setDefault('counter', 0);
-
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
-*/
-
-
-
-
-
-
   Template.body.helpers({
     tiles: function () {
       return Tiles.find({}, {sort: {createdAt: -1}});
@@ -59,7 +36,7 @@ if (Meteor.isServer) {
 
 
 
-// Helper functions
+// Tiling logic
 var Tile = {
   width: 128,
   height: 96,
