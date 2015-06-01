@@ -15,12 +15,14 @@ if (Meteor.isClient) {
           y = a.pageY;
 
       var grid = pixel2grid(x, y, 0);
+      var placement = grid2pixel(grid[0], grid[1], 0);
 
-      console.log(x, y);
+      console.log(placement[0], placement[1]);
 
       Tiles.insert({
-        x: x,
-        y: y,
+        x: placement[0],
+        y: placement[1],
+        z: placement[2],
         type: 'cobblestone'
       });
     }
@@ -54,13 +56,14 @@ function pixel2grid (x, y, height) {
   y += height * Tile.elevation + Tile.offset[1];
   i = Math.floor(x / Tile.width - y / Tile.surface);
   j = Math.floor(x / Tile.width + y / Tile.surface);
-  return [i, j];
+  return [i, j, height];
 }
 
 function grid2pixel(i, j, height) { 
-  var x, y;
+  var x, y, z;
   x = i * Tile.width / 2  + j * Tile.width / 2;
-  y = -i * Tile.top / 2 + j * Tile.top / 2;
+  y = -i * Tile.surface / 2 + j * Tile.surface / 2;
   y -= height * Tile.elevation;
-  return [x, y]; 
+  z = -i + j + height;
+  return [x, y, z]; 
 }
