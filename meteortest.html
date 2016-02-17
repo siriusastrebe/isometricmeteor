@@ -3,22 +3,32 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> world}}
+  {{> wizard}}
  
-  {{#each tiles}}
-    {{> tile}}
-  {{/each}}
+  {{> world}}
 
 </body>
 
-<template name="world">
-  <div id="world">
-    <ul>
-    </ul>
+<template name="wizard">
+  <div id="wizard">
+    <h1>Tiling Wizard</h1>
+    <h2>Elevation</h2>
+    <input type="number" value=0 id="elevation" />
   </div>
 </template>
+
+<template name="world">
+  <div id="world">
+    {{#each tiles}}
+      {{> tile}}
+    {{/each}}
+
+    {{#with wireframe}}
+      <div class="wireframe {{negative}}" style="left: {{x}}px; top: {{y}}px; z-index: {{z}}"></div>
+    {{/with}}
+  </div>
+</template>
+
 
 <template name="tile">
   <div class="cobblestone" style="left: {{x}}px; top: {{y}}px; z-index: {{z}}"></div>

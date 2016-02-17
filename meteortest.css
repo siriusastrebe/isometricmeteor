@@ -1,8 +1,19 @@
 /* CSS declarations go here */
 
+#wizard {
+    width: 300px;
+    height: 100%;
+    background-color: yellow;
+    position: absolute;
+    left: 0px;
+    z-index: 200;
+}
+
 #world {
-    width: 2048px;
-    height: 1024px;
+    position: absolute;
+    left: 300px;
+    height: 100%;
+    width: 100%;
 }
 
 .cobblestone {
@@ -10,4 +21,15 @@
     position: absolute;
     height: 96px;
     width: 128px;
+}
+
+.wireframe {
+    background-image: url('wireframe.png');
+    position: absolute;
+    height: 96px;
+    width: 128px;
+}
+
+.wireframe.negative {
+    background-image: url('negative.png');
 }
