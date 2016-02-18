@@ -3,10 +3,13 @@
 #wizard {
     width: 300px;
     height: 100%;
-    background-color: yellow;
+    background-color: #CCF;
     position: absolute;
     left: 0px;
     z-index: 200;
+    padding: 20px;
+    margin: 0px;
+    border: 2px inset #888;
 }
 
 #world {
@@ -16,18 +19,26 @@
     width: 100%;
 }
 
-.cobblestone {
-    background-image: url('cobblestone.png');
+.tile {
     position: absolute;
     height: 96px;
     width: 128px;
 }
 
+.cobblestone {
+    background-image: url('cobblestone.png');
+}
+
+.bread {
+    background-image: url('bread.png');
+}
+
+.coal {
+    background-image: url('coal.png');
+}
+
 .wireframe {
     background-image: url('wireframe.png');
-    position: absolute;
-    height: 96px;
-    width: 128px;
 }
 
 .wireframe.negative {

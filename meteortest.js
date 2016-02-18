@@ -100,9 +100,11 @@ if (Meteor.isClient) {
     'click': function (a) { 
       var x = a.pageX,
           y = a.pageY;
-          h = Number(document.getElementById('elevation').value) || 0;
+          h = Number(document.getElementById('elevation').value) || 0,
+					type = document.getElementById("type").value;
+	
 
-      var clicked = Tile.Place(x, y, h, 'cobblestone');
+      var clicked = Tile.Place(x, y, h, type);
 
       var existing = Tile.Check(clicked.i, clicked.j, clicked.h)
       if (existing) {

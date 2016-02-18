@@ -12,8 +12,23 @@
 <template name="wizard">
   <div id="wizard">
     <h1>Tiling Wizard</h1>
-    <h2>Elevation</h2>
-    <input type="number" value=0 id="elevation" />
+    <h4>Elevation</h4>
+    <select id="elevation">
+      <option value="-1">Basement</option>
+      <option value="0" selected="selected">Ground Floor</option>
+      <option value="1">Second Story</option>
+      <option value="2">Third Story</option>
+      <option value="3">Fourth Story</option>
+      <option value="4">Fifth Story</option>
+      <option value="5">Sixth Story</option>
+      <option value="6">Roof</option>
+    </select>
+    <h4>Tile Selection</h4>
+    <select id="type">
+      <option value="cobblestone">Cobblestone</option>
+      <option value="bread">Bread</option>
+      <option value="coal">Coal</option>
+    </select>
   </div>
 </template>
 
@@ -24,12 +39,12 @@
     {{/each}}
 
     {{#with wireframe}}
-      <div class="wireframe {{negative}}" style="left: {{x}}px; top: {{y}}px; z-index: {{z}}"></div>
+      <div class="wireframe tile {{negative}}" style="left: {{x}}px; top: {{y}}px; z-index: {{z}}"></div>
     {{/with}}
   </div>
 </template>
 
 
 <template name="tile">
-  <div class="cobblestone" style="left: {{x}}px; top: {{y}}px; z-index: {{z}}"></div>
+  <div class="{{type}} tile" style="left: {{x}}px; top: {{y}}px; z-index: {{z}}"></div>
 </template>
